@@ -36,7 +36,8 @@ const vue = new Vue(
                 }
             ],
 
-            active: 0
+            active: 0,
+            play: 0
         },
         methods: {
 
@@ -47,6 +48,7 @@ const vue = new Vue(
                 }else{
                     this.active--;
                 }
+                this.resetPlay();
                 
             },
 
@@ -57,15 +59,19 @@ const vue = new Vue(
                 }else{
                     this.active++;
                 }
-                
+                this.resetPlay();
             },
 
             autoPlay() {
                 
-                setInterval(() =>{
+                this.play = setInterval(() =>{
                     this.next();
                 }, 3000);
-            }
+            },
+
+            resetPlay() {
+                clearInterval(this.play);
+              },
             
         },
         
