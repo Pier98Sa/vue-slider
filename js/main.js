@@ -66,7 +66,7 @@ const vue = new Vue(
                 
                 this.play = setInterval(() =>{
                     this.next();
-                }, 250);
+                }, 3000);
             },
 
             resetPlay() {
