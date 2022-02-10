@@ -66,13 +66,21 @@ const vue = new Vue(
                 
                 this.play = setInterval(() =>{
                     this.next();
-                }, 3000);
+                }, 250);
             },
 
             resetPlay() {
                 clearInterval(this.play);
                 this.autoPlay();
-              },
+            },
+
+            stopOver(){
+                clearInterval(this.play);
+            },
+
+            playLeave(){
+                this.autoPlay();
+            }
             
         },
         

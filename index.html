@@ -10,7 +10,7 @@
 <body>
    <div class="container" id="root">
 
-        <div class="items">
+        <div class="items" @mouseover="resetPlayHover" @mouseleave="playLeave">
             <div class="item ">
                 <img :src="items[active].url" :alt="items[active].alt">
                 <div class="text">
