@@ -71,6 +71,7 @@ const vue = new Vue(
 
             resetPlay() {
                 clearInterval(this.play);
+                this.autoPlay();
               },
             
         },
