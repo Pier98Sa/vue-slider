@@ -40,7 +40,7 @@ const vue = new Vue(
             play: 0
         },
         methods: {
-
+            //funzione per vedere la foto precedente
             previous() {
 
                 if(this.active == 0){
@@ -52,6 +52,7 @@ const vue = new Vue(
                 
             },
 
+            //funzione per vedere la foto successiva
             next() {
 
                 if(this.active == this.items.length - 1){
@@ -62,6 +63,7 @@ const vue = new Vue(
                 this.resetPlay();
             },
 
+            //Funzione per l'autoplay
             autoPlay() {
                 
                 this.play = setInterval(() =>{
@@ -69,21 +71,25 @@ const vue = new Vue(
                 }, 3000);
             },
 
+            //funzione per resettare la funzione di autoplay
             resetPlay() {
                 clearInterval(this.play);
                 this.autoPlay();
             },
 
+            //funzione richiamata in caso di over per stoppare l'autoplay
             stopOver(){
                 clearInterval(this.play);
             },
 
+            //funzione per riprendere l'autoplay 
             playLeave(){
                 this.autoPlay();
             }
             
         },
         
+        //invocazione dell'autoplay alla creazione della pagina
         created: function() {
             this.autoPlay();
         }

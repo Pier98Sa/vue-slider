@@ -9,8 +9,9 @@
 </head>
 <body>
    <div class="container" id="root">
-
+    <!--Items con effeto di mouse over e mouse leave-->
         <div class="items" @mouseover="stopOver" @mouseleave="playLeave">
+            <!--Cambio dinamico della foto e dei relativi testi-->
             <div class="item ">
                 <img :src="items[active].url" :alt="items[active].alt">
                 <div class="text">
@@ -19,17 +20,17 @@
                 </div>
             </div> 
         </div>
-
+        <!--Thums-->
         <div class="thumbs">
-
+            <!--tasti previous e next-->
             <div class="prev" @click="previous"></div>
             <div class="next" @click="next"></div>
 
+            <!--creazione delle thums con un ciclo for aggiunta della classe active dinamica-->
             <div class="thumb" :class="index == active? 'active':''" v-for="(item, index) in items">
                 <img :src="item.url" :alt="item.alt">
             </div> 
-            
-            
+             
         </div>
 
    </div>
