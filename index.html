@@ -21,7 +21,7 @@
             </div> 
         </div>
         <!--Thums-->
-        <div class="thumbs">
+        <div class="thumbs" @mouseover="stopOver" @mouseleave="playLeave">
             <!--tasti previous e next-->
             <div class="prev" @click="previous"></div>
             <div class="next" @click="next"></div>
