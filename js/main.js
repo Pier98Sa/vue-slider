@@ -39,6 +39,14 @@ const vue = new Vue(
             active: 0,
             play: 0
         },
+
+
+        //invocazione dell'autoplay alla creazione della pagina
+        created: function() {
+            this.autoPlay();
+        },
+
+        
         methods: {
             //funzione per vedere la foto precedente
             previous() {
@@ -89,10 +97,7 @@ const vue = new Vue(
             
         },
         
-        //invocazione dell'autoplay alla creazione della pagina
-        created: function() {
-            this.autoPlay();
-        }
+       
     }
 
 );
